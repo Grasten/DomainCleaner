@@ -11,32 +11,18 @@
 <body>
     <div class="parser">
         <div class="parser__topbar">
-            <div><p>domains to clean up</p>
-                <label for="parserInput">
-                    <textarea class="parser__topbar__input" id="parserInput">Domain TLD Source Category Suspension Date quaes[dot]store store Google Safe Browsing Social Engineering 2025-04-06 12:57:15 tonduton[dot]online online Google Safe Browsing Social Engineering 2025-04-06 12:57:18 tonduton[dot]online online Google Safe Browsing Social Engineering 2025-04-06 12:57:19 everyweaveheadache[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:22 everyweaveheadache[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:22 himselfgrinbetter[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:25 himselfgrinbetter[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:25 cousinothersurveillance[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:31 cousinothersurveillance[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:32 alreadycollectorconfusion[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:35 alreadycollectorconfusion[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:35 economicallydominateinvent[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:38 economicallydominateinvent[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:38 alloverwhelmtale[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:41 alloverwhelmtale[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:42 opponentequitywho[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:45 opponentequitywho[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:45 themapagroup[dot]online online Google Safe Browsing Social Engineering 2025-04-06 12:57:48 themapagroup[dot]online online Google Safe Browsing Social Engineering 2025-04-06 12:57:48 soulvibe[dot]store store Netcraft Scam 2025-04-06 14:00:42</textarea>
-                </label>
+            <div class="parser__topbar__inputs">
+                <h1>Domains to parse</h1>
+                <label for="parserInput" class="parser__topbar__inputs__label"></label>
+                <textarea class="parser__topbar__inputs__input" id="parserInput"></textarea>
             </div>
             <div class="parser__topbar__buttons">
-                <button class="parser__topbar__buttons__button" onclick="cleanDomains('parser')">Clean</button>
+                <button class="parser__topbar__buttons__button" onclick="cleanDomains()">Clean</button>
+                <button class="parser__topbar__buttons__button" onclick="openDomains()">Open</button>
             </div>
         </div>
         <label>
             <textarea class="parser__output" id="parserOutput"></textarea>
-        </label>
-    </div>
-    <div class="opener">
-        <div class="opener__topbar">
-            <div><p>domains to open</p>
-                <label for="openerInput">
-                    <textarea class="opener__topbar__input" id="openerInput">Domain TLD Source Category Suspension Date quaes[dot]store store Google Safe Browsing Social Engineering 2025-04-06 12:57:15 tonduton[dot]online online Google Safe Browsing Social Engineering 2025-04-06 12:57:18 tonduton[dot]online online Google Safe Browsing Social Engineering 2025-04-06 12:57:19 everyweaveheadache[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:22 everyweaveheadache[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:22 himselfgrinbetter[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:25 himselfgrinbetter[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:25 cousinothersurveillance[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:31 cousinothersurveillance[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:32 alreadycollectorconfusion[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:35 alreadycollectorconfusion[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:35 economicallydominateinvent[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:38 economicallydominateinvent[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:38 alloverwhelmtale[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:41 alloverwhelmtale[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:42 opponentequitywho[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:45 opponentequitywho[dot]site site Google Safe Browsing Social Engineering 2025-04-06 12:57:45 themapagroup[dot]online online Google Safe Browsing Social Engineering 2025-04-06 12:57:48 themapagroup[dot]online online Google Safe Browsing Social Engineering 2025-04-06 12:57:48 soulvibe[dot]store store Netcraft Scam 2025-04-06 14:00:42</textarea>
-                </label>
-            </div>
-            <div class="opener__topbar__buttons">
-                <button class="opener__topbar__buttons__button" onclick="cleanDomains('opener')">Open</button>
-            </div>
-        </div>
-        <label>
-            <textarea class="opener__output" id="openerOutput"></textarea>
         </label>
     </div>
 </body>

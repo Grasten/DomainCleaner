@@ -2,7 +2,7 @@ body {
     height: 100vh;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
 }
 * {
@@ -11,26 +11,38 @@ body {
     padding: 0;
 }
 
-.parser, .opener{
+.parser{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 4fr;
     grid-row-gap: 30px;
     height: 100%;
     padding: 20px;
+    background: linear-gradient(to right, rgba(red, .4) 50%, rgba(blue, .3) 50%);
     &__topbar{
         display: grid;
         grid-template-columns: 1fr auto;
-        grid-template-rows: auto;
+        grid-template-rows: 1fr;
         grid-gap: 20px;
-        &__input{
+        overflow: hidden;
+        &__inputs{
+            box-sizing: border-box;
             height: 100%;
-            width: 100%;
+            display: flex;
+            flex-direction: column;
+            &label{
+                display: none;
+            }
+            &__input{
+                height: 100%;
+                width: 100%;
+            }
         }
         &__buttons{
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+            flex-direction: column;
             &__button{
                 height: 80px;
                 width: 80px;
@@ -38,6 +50,10 @@ body {
                 background-size: 100%;
                 transition: all ease-in-out 0.1s;
                 background-position: center;
+                color: black;
+                text-shadow: 0 0 3px white;
+                font-weight: bold;
+                font-size: 1.2rem;
                 &:hover{
                     background-size: 200%;
                 }
@@ -50,10 +66,3 @@ body {
     }
 }
 
-.parser{
-    background: rgba(256,0,0,.3);
-}
-
-.opener{
-    background: rgba(0,0,256,.3);
-}

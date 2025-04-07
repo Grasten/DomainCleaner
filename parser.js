@@ -31,10 +31,14 @@ function createListFromArray(el){
   return domainList;
 }
 
-
-function cleanDomains(id){
-  getDomains(`${id}Input`);
+function cleanDomains(){
+  getDomains("parserInput");
   filteredDomainsString = createListFromArray(getDomainsArray(removeBrackets(rawDomains)));
-  console.log(filteredDomainsArray);
-  document.getElementById(`${id}Output`).value = filteredDomainsString;
+  document.getElementById("parserOutput").value = filteredDomainsString;
+}
+
+function openDomains(){
+  filteredDomainsArray.forEach((el) => {
+    window.open(`https://${el}`);
+  })
 }
