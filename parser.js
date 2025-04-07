@@ -1,25 +1,40 @@
 console.log('Happy developing ✨')
-let rawDomains, filteredDomains;
-//import {getDomain} from './tld.js';
-const regBracket = /(\s?\W\s?\.\s?\W\s?)/ig;
+let rawDomains, filteredDomainsString, filteredDomainsArray;
+const regBracket = /(\s?\W\s?\.\s?\W\s?)?(\s?\W\s?)dot(\s?\W\s?)?/ig;
 const regTld = /(\w{2,}\.\w{2,})(\.\w{1,2})?/g;
 
-function getDomains() {
-  return rawDomains = document.getElementById('parserDomainsInput').value;
+function getDomains(id) {
+  rawDomains = document.getElementById(id).value;
+}
+
+function uniq(a) {
+  const seen = {};
+  return a.filter(function(item) {
+    return seen.hasOwnProperty(item) ? false : (seen[item] = true);
+  });
 }
 
 function removeBrackets(el){
   return el.replace(regBracket, ".");
 }
-function separateDomains(el){
-  return el.replace(regTld, "$&\n");
+
+function getDomainsArray(el){
+  filteredDomainsArray = uniq(el.match(regTld))
+  return filteredDomainsArray;
+}
+
+function createListFromArray(el){
+  let domainList = "";
+  el.forEach((el) => {
+    domainList+= `${el}\n`;
+  })
+  return domainList;
 }
 
 
-function processDomains(){
-  getDomains();
-  //console.log(getDomain(rawDomains));
-  filteredDomains = separateDomains(removeBrackets(rawDomains));
-  console.log(filteredDomains);
-  document.getElementById('parserDomainsOutput').value = filteredDomains;
+function cleanDomains(id){
+  getDomains(`${id}Input`);
+  filteredDomainsString = createListFromArray(getDomainsArray(removeBrackets(rawDomains)));
+  console.log(filteredDomainsArray);
+  document.getElementById(`${id}Output`).value = filteredDomainsString;
 }
